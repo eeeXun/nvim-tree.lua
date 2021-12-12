@@ -221,8 +221,8 @@ function M.set_index_and_redraw(fname)
           git.load_project_status(node.absolute_path, function(status)
             if status.dirs or status.files then
               reload_node_status(node, git.projects)
-              M.redraw()
             end
+            M.redraw()
           end)
         end
         if node.open == false then
@@ -345,8 +345,6 @@ function M.open_file(mode, filename)
 
   if target_winid == -1 then
     target_winid = M.Tree.target_winid
-  elseif target_winid == nil then
-    return
   end
 
   local do_split = mode == "split" or mode == "vsplit"
